@@ -1,0 +1,39 @@
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+def pageCount(n, p):
+    if n%2==0:
+        if (p-1)<(n-p):
+            x=math.ceil((p-1)/2)
+        else:
+            x=math.ceil(((n-p)/2) + 1)
+        
+    if n%2!=0:
+        if (p-1)<(n-p):
+            x=math.ceil((n-1)/2)
+        else:
+            x=math.ceil(((n-p)/2))
+    return x
+        
+    
+    
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    p = int(input().strip())
+
+    result = pageCount(n, p)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
